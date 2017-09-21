@@ -47,11 +47,12 @@ elseif (UNIX)
 endif()
 
 
-set(COMMON_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../include)
-set(COMMON_LIB_DIR ${PROJECT_SOURCE_DIR}/../lib/${PLATFORM}) 
+set(COMMON_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../../include)
+set(COMMON_LIB_DIR ${PROJECT_SOURCE_DIR}/../../lib/${PLATFORM}) 
 
 ############# INCLUDE DIRECTORIES #############
 include_directories(${COMMON_INCLUDE_DIR})
+include_directories(${COMMON_INCLUDE_DIR}/lisence)
 include_directories(${COMMON_LIB_DIR})
 include_directories(${PROJECT_SOURCE_DIR})
 
@@ -89,8 +90,8 @@ file(GLOB SOURCES
     "*.cpp"
 )
 set(SOURCES_UTIL 
-			${COMMON_INCLUDE_DIR}/LicDefine.h
-			${COMMON_INCLUDE_DIR}/license.h
+			${COMMON_INCLUDE_DIR}/lisence/LicDefine.h
+			${COMMON_INCLUDE_DIR}/lisence/license.h
 					
 )
 

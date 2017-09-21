@@ -55,11 +55,6 @@ int CDataHandler::handle(int argc, char* argv[])
 	else if (argc == 3 && 0 == strcmp("-y", argv[1]))
 	{
 		string strDate(argv[2]);
-		if (strDate.size() != 4)
-		{
-			cout << "时间格式错误，格式为：2017，四位数字" << endl;
-			return -1;
-		}
 		int ndate = atoi(strDate.c_str());
 		return WriteLisence(ndate,3);
 	}
@@ -257,33 +252,44 @@ int CDataHandler::WriteLisenceData(string strData, string strFilePath )
 int CDataHandler::WriteLisence(int ndate, int nType, string strFilePath )
 {
 	int nRes = 0;
-	
+	if (ndate<1)
+	{
+		return -1;
+	}
 	long lCurDate = GetDate();
 	char buf[100] = { 0 };
 	memset(buf, 0, 100);
 	time_t tCur;
 	time(&tCur);
-	
+	ec::Date curData;
 	if (nType == 0 )
 	{
 		sprintf(buf, "%d%ld", ndate, (unsigned long)tCur);
-	}else if (nType == 1 )
+	}else if (nType == 3 )
 	{
-
+		curData.addYear(ndate);
+		sprintf(buf, "%04d%02d%02d", curData.year(), curData.month(), curData.day());
 	}
 	else if (nType == 2)
 	{
+		curData.addMonth(ndate);
+		sprintf(buf, "%04d%02d%02d", curData.year(), curData.month(), curData.day());
 
 	}
-	else if (nType == 3)
+	else if (nType == 1)
 	{
+		curData.add(ndate, ec::Duration::Day);
+		sprintf(buf, "%04d%02d%02d", curData.year(), curData.month(), curData.day());
 
 	}
 	
 	//TODO: check date
+	if (nRes==0)
+	{
+		string strData(buf);
+		nRes = WriteLisenceData(strData, strFilePath);
+	}
 
-	string strData(buf);
-	nRes = WriteLisenceData(strData, strFilePath);
 
 	return nRes;
 }

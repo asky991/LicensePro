@@ -7,7 +7,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 ############# VERSION ###################
 set(MY_PRODUCT_NUMBER 1)
 set(MY_PRODUCT_VERSION 0)
-set(MY_BUILD_NUMBER 2)
+set(MY_BUILD_NUMBER 3)
 set(MY_INTERNAL_BUILD_NUMBER 1)
 
 configure_file(
@@ -41,7 +41,14 @@ endif()
 
 	
 IF (MSVC)
-	SET(PLATFORM win2015)
+	#SET(PLATFORM win2015)
+	
+	IF (MSVC_VERSION EQUAL 1900)
+		set(PLATFORM win2015)
+	ELSE()
+		SET(PLATFORM win)
+	ENDIF()
+
 elseif (UNIX)
 	SET(PLATFORM linux)
 endif()

@@ -7,8 +7,8 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 ############# VERSION ###################
 set(MY_PRODUCT_NUMBER 1)
 set(MY_PRODUCT_VERSION 0)
-set(MY_BUILD_NUMBER 1)
-set(MY_INTERNAL_BUILD_NUMBER 3)
+set(MY_BUILD_NUMBER 2)
+set(MY_INTERNAL_BUILD_NUMBER 1)
 
 configure_file(
   ${PROJECT_SOURCE_DIR}/version.h.in

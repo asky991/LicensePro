@@ -19,3 +19,17 @@ CreateLisence/src/build/CMakeFiles/3.8.0/CompilerIdCXX/CompilerIdCXX.exe
 CreateLisence/src/build/CMakeFiles/generate.stamp
 CreateLisence/src/build/CMakeFiles/generate.stamp.depend
 CreateLisence/src/build/CMakeFiles/TargetDirectories.txt
+*.cache
+*.opendb
+*.db
+CreateLisence/src/build/.vs/FQLisence/v14/.suo
+CreateLisence/src/build/Debug/FQLisence.ilk
+CreateLisence/src/build/Debug/FQLisence.ilk
+CreateLisence/src/build/Debug/FQLisence.pdb
+CreateLisence/src/build/FQLisence.dir/Debug/vc140.pdb
+CreateLisence/src/build/FQLisence.dir/Debug/version.res
+CreateLisence/src/build/Debug/FQLisence.pdb
+CreateLisence/src/build/Debug/FQLisence.pdb
+CreateLisence/src/build/Debug/FQLisence.ilk
+CreateLisence/src/build/Debug/FQLisence.ilk
+*.ilk

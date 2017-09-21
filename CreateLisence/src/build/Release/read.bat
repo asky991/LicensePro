@@ -1,0 +1,2 @@
+FQLisence.exe 
+pause

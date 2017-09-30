@@ -1,3 +1,3 @@
-FQLisence.exe -w 20171001
+FQLisence.exe -w 20201001
 
 read.bat
